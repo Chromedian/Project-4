@@ -3,6 +3,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 import java.util.Base64;
+import java.util.Scanner;
 
 public class AESUtil {
     // Debug flag
@@ -107,12 +108,14 @@ public class AESUtil {
     // Sample usage
     public static void main(String[] args) throws Exception {
         setDebug(true);
-
-        String plaintext = "This is a test message.";
-        String key = "password12345678";
+        Scanner text = new Scanner(System.in);
+        Scanner code = new Scanner(System.in);
+        System.out.println("Please Enter Your Plaintext: ");
+        String plaintext = text.nextLine();
+        System.out.println("Please Enter Your Key: ");
+        String key = code.nextLine();
 
         System.out.println("\nStarting Text: " + plaintext);
-        
         System.out.println("\n----- ECB Mode -----");
         String encryptedECB = encrypt(plaintext, key, false);
         System.out.println("Encrypted: " + encryptedECB);
