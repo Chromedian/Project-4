@@ -111,12 +111,15 @@ public class AESUtil {
         String plaintext = "This is a test message.";
         String key = "password12345678";
 
-        System.out.println("----- ECB Mode -----");
+        System.out.println("\nStarting Text: " + plaintext);
+        
+        System.out.println("\n----- ECB Mode -----");
         String encryptedECB = encrypt(plaintext, key, false);
         System.out.println("Encrypted: " + encryptedECB);
         String decryptedECB = decrypt(encryptedECB, key, false);
         System.out.println("Decrypted: " + decryptedECB);
 
+        
         System.out.println("\n----- CBC Mode -----");
         String encryptedCBC = encrypt(plaintext, key, true);
         System.out.println("Encrypted: " + encryptedCBC);
